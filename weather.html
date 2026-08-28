@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="weather_style.css">
+</head>
+
+<body>
+
+    <main class="weather-app">
+
+        <!-- Header -->
+        <header class="header">
+            <div>
+                <p class="small-title">LIVE WEATHER</p>
+                <h1>Weather Dashboard</h1>
+                <p class="subtitle">
+                    Check real-time weather conditions anywhere in the world.
+                </p>
+            </div>
+
+            <div class="weather-icon">
+                ☁️
+            </div>
+        </header>
+
+
+        <!-- Search Section -->
+        <section class="search-section">
+
+            <form id="weatherForm">
+
+                <div class="search-box">
+
+                    <span class="search-icon">🔍</span>
+
+                    <input
+                        type="text"
+                        id="cityInput"
+                        placeholder="Enter city name..."
+                        autocomplete="off"
+                    >
+
+                    <button type="submit" id="searchButton">
+                        Search
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="errorMessage" class="error-message"></p>
+
+        </section>
+
+
+        <!-- Loading -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+
+
+        <!-- Weather Dashboard -->
+        <section id="weatherContainer" class="weather-container hidden">
+
+            <!-- Location -->
+            <div class="location-section">
+
+                <div>
+                    <p class="label">CURRENT WEATHER</p>
+
+                    <h2 id="cityName">
+                        Chennai
+                    </h2>
+
+                    <p id="countryName">
+                        India
+                    </p>
+                </div>
+
+                <div class="date-section">
+                    <p id="currentDate"></p>
+                    <p id="currentTime"></p>
+                </div>
+
+            </div>
+
+
+            <!-- Main Weather -->
+            <div class="main-weather">
+
+                <div class="temperature-section">
+
+                    <div class="weather-symbol" id="weatherSymbol">
+                        ☀️
+                    </div>
+
+                    <div>
+                        <div class="temperature">
+                            <span id="temperature">30</span>
+                            <span class="degree">°C</span>
+                        </div>
+
+                        <p id="weatherDescription">
+                            Clear sky
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Weather Cards -->
+            <div class="weather-cards">
+
+                <!-- Humidity -->
+                <div class="weather-card">
+
+                    <div class="card-icon">
+                        💧
+                    </div>
+
+                    <div>
+                        <p class="card-label">Humidity</p>
+
+                        <h3>
+                            <span id="humidity">--</span>%
+                        </h3>
+
+                        <p class="card-description">
+                            Relative humidity
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Wind -->
+                <div class="weather-card">
+
+                    <div class="card-icon">
+                        💨
+                    </div>
+
+                    <div>
+                        <p class="card-label">Wind Speed</p>
+
+                        <h3>
+                            <span id="windSpeed">--</span>
+                            <small>km/h</small>
+                        </h3>
+
+                        <p class="card-description">
+                            Current wind
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Feels Like -->
+                <div class="weather-card">
+
+                    <div class="card-icon">
+                        🌡️
+                    </div>
+
+                    <div>
+                        <p class="card-label">Feels Like</p>
+
+                        <h3>
+                            <span id="feelsLike">--</span>°C
+                        </h3>
+
+                        <p class="card-description">
+                            Apparent temperature
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Weather Code -->
+                <div class="weather-card">
+
+                    <div class="card-icon">
+                        🌤️
+                    </div>
+
+                    <div>
+                        <p class="card-label">Condition</p>
+
+                        <h3 id="conditionShort">
+                            Clear
+                        </h3>
+
+                        <p class="card-description">
+                            Current condition
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Footer information -->
+            <div class="weather-footer">
+
+                <p>
+                    📍 <span id="coordinates">--</span>
+                </p>
+
+                <p>
+                    🕐 Local time: <span id="timezone">--</span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Initial Message -->
+        <section id="welcomeMessage" class="welcome">
+
+            <div class="welcome-icon">
+                🌍
+            </div>
+
+            <h2>Search for a city</h2>
+
+            <p>
+                Enter a city name above to see its current weather conditions.
+            </p>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Weather Dashboard • Built with HTML, CSS & JavaScript
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="weatherr_js.js"></script>
+
+</body>
+</html>
